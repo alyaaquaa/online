@@ -1,0 +1,28 @@
+<!-- choose_room.html -->
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wybierz pokój</title>
+</head>
+<body>
+    <h1>Wybierz pokój</h1>
+
+    <form method="POST">
+        <label for="room_id">Wpisz ID pokoju, aby dołączyć:</label>
+        <input type="text" name="room_id" id="room_id" required>
+        <button type="submit">Dołącz do pokoju</button>
+    </form>
+
+    <h2>Lub stwórz nowy pokój:</h2>
+<form method="POST" action="{{ url_for('choose_room') }}">
+    <button type="submit">Utwórz pokój</button>
+</form>
+
+    {% if room_id %}
+        <h3>Twoje ID pokoju: {{ room_id }}</h3>
+        <p>Podziel się tym ID z drugim graczem.</p>
+    {% endif %}
+</body>
+</html>

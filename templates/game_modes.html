@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wybór trybu gry</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Wybór trybu gry</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Powrót do menu</a>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Wybierz tryb:</h2>
+        <form method="POST" >
+            <button type="submit" name="game_mode" value="2players" class="tryby-przyciski">Graj na jednym komputerze</button>
+            <button type="submit" name="game_mode" value="vs_computer" class="tryby-przyciski">Graj z komputerem</button>
+            <button type="submit" name="game_mode" value="online" class="tryby-przyciski">Graj online</button>
+        </form>
+    </section>
+
+    {% if game_mode %}
+        <h3>Wybrany tryb: {{ game_mode }}</h3>
+    {% endif %}
+</body>
+</html>

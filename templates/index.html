@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psy i Lis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Witaj w grze Lis i Psy!</h1>
+        <nav>
+            <a href="{{ url_for('instructions') }}">Instrukcje</a>
+        </nav>
+    </header>
+    <section>
+        <h2>Rozpocznij grę!</h2>
+        <form action="{{ url_for('game_modes') }}" method="get">
+            <button type="submit" class="btn-start">START</button>
+        </form>
+    </section>
+</body>
+</html>

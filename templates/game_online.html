@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psy i Lis - Gra</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Tryb: online</h1>
+        <p>Pokój: {{ session['room_id'] }}</p>
+        <p><strong>Kolej gracza:</strong> {{ state.turn }}</p>
+        <nav>
+            <a href="{{ url_for('index') }}">Powrót do menu</a>
+        </nav>
+    </header>
+
+
+    <div class="game-container">
+    <table>
+        {% for x in range(size) %}
+            <tr>
+                {% for y in range(size) %}
+                    <td class="{{ 'brown' if (x + y) % 2 == 1 else 'white' }}">
+                        {% if (x + y) % 2 == 1 %}
+                            <form method="POST" style="margin: 0;">
+                                <input type="hidden" name="x" value="{{ x }}">
+                                <input type="hidden" name="y" value="{{ y }}">
+                                <button type="submit" class="{{ 'selected' if state.selected and state.selected[1] == [x, y] else '' }}">
+                                    {% if state.fox == [x, y] %}
+                                        <img src="{{ url_for('static', filename='fox.png') }}" alt="Lis" width="40" height="40">
+                                    {% elif [x, y] in state.dogs %}
+                                        <img src="{{ url_for('static', filename='dog.png') }}" alt="Pies" width="40" height="40">
+                                    {% else %}
+                                        &nbsp;
+                                    {% endif %}
+                                </button>
+                            </form>
+                        {% else %}
+                            &nbsp;
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+
+    {% if state.game_over %}
+        <div id="game-over">
+            <h2>Wygrał: {{ winner }}</h2>
+            <form method="POST">
+                <button type="submit" name="reset" value="true" class="restart">Zrestartuj grę</button>
+            </form>
+        </div>
+    {% endif %}
+    </div>
+</body>
+</html>

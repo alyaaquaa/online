@@ -1,0 +1,145 @@
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #ffca00;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #950000;
+    color: whitesmoke;
+    padding: 35px;
+}
+
+/* Tabela */
+table {
+    border-collapse: collapse;
+    margin: 20px; /* Usunięcie marginesu z tabeli */
+}
+
+/* Komórki tabeli */
+td {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 24px;
+    padding: 0;
+}
+
+/* Kolory dla komórek */
+.brown {
+    background-color: #8B4513;
+}
+
+.white {
+    background-color: #F5F5DC;
+}
+
+.selected {
+    outline: 3px solid yellow;
+}
+
+/* Stylowanie przycisków */
+button {
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Linki */
+a {
+    color: yellow;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Styl dla przycisku START */
+.btn-start {
+    background-color: #ff0000; /* Czerwony kolor tła */
+    color: white;
+    padding: 40px; /* Wewnętrzny margines */
+    margin: 40px;
+    font-size: 25px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgb(9, 251, 162); /* Cień */
+    border: none;
+    border-radius: 8px; /* Zaokrąglone rogi */
+    width: 400px;
+}
+
+/* Kontener dla planszy i przycisków */
+.game-container {
+    display: flex; /* Układ poziomy */
+    align-items: center; /* Wyrównanie w pionie */
+    justify-content: center; /* Wyśrodkowanie poziome */
+    gap: 10px; /* Mniejsza przerwa między planszą a przyciskami */
+}
+
+/* Przycisk restartu */
+.restart {
+    background-color: #2200ff;
+    color: white;
+    padding: 10px 20px;
+    margin: 0; /* Usunięcie marginesu wokół przycisku */
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    width: auto;
+}
+
+
+.tryby {
+    background-color: #09fba2; /* Czerwony kolor tła */
+    color: white;
+    padding: 25px; /* Wewnętrzny margines */
+    margin: 25px; /* Zmniejsz margines wokół przycisku */
+}
+
+.tryby-przyciski {
+    background-color: #ff4400; /* Czerwony kolor tła */
+    color: white;
+    padding: 20px; /* Wewnętrzny margines */
+    margin: 20px; /* Zmniejsz margines wokół przycisku */
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px; /* Zaokrąglone rogi */
+    width: auto; /* Szerokość przycisku na auto, aby nie był szeroki */
+    display: block; /* Sprawia, że przycisk będzie na osobnej linii */
+    margin-left: auto;
+    margin-right: auto; /* Wyśrodkowanie przycisków */
+}
+
+
+header {
+    margin: 10px ;
+    background:
+        url('dogfox.jpeg') repeat-y left center, /* Obrazek po lewej stronie */
+        url('dogfox.jpeg') repeat-y right center, /* Obrazek po prawej stronie */
+        linear-gradient(to right, #c51212 100%, transparent 100%); /* Kolor tła (gradient) w centrum */
+    background-size: auto 100%, auto 100%, 100% 100%; /* Obrazek w pełnej wysokości po lewej i prawej, gradient na całą szerokość */
+    background-repeat: repeat-y, repeat-y, no-repeat; /* Powtarzanie obrazków tylko w pionie po obu stronach */
+    background-position: left center, right center, center center; /* Obrazki po lewej i prawej stronie, gradient w środku */
+    height: 100px; /* Wysokość nagłówka */
+}
+
+
+
+
+#waiting-message {
+    background-color: #ffeb3b;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
